@@ -631,7 +631,17 @@
     "vl_key": [],
     "str": "#ifdef GL_ES\r\n#define LOWP lowp\r\nprecision mediump float;\r\n#else\r\n#define LOWP\r\n#endif\r\n//\"in\" attributes from our vertex shader\r\nvarying LOWP vec4 vColor;\r\nvarying vec2 vTexCoord;\r\n//our different texture units\r\n\r\nprecision highp float;\r\nuniform sampler2D dm_from;\r\nuniform sampler2D dm_to;\r\nuniform float dm_progress;\r\nvec4 getFromColor(vec2 uv){return texture2D(dm_from,uv);}\r\nvec4 getToColor(vec2 uv){return texture2D(dm_to,uv);}\r\n\r\nuniform sampler2D dm_u_mask;\r\n\r\nvec4 transition(vec2 uv) {\r\n    vec4 maskVec4 = texture2D(dm_u_mask,uv);\r\n    return mix(\r\n    getToColor(uv),\r\n    getFromColor(uv),\r\n    step(dm_progress,maskVec4.a)\r\n    );\r\n}\r\n\r\n\r\nvoid main(void){\r\n    gl_FragColor=transition(vTexCoord);\r\n\r\n}",
     "name_file": "luma_mobile",
-    "name_luma_img": []
+    "name_luma_img": [
+      "luma_img_0.png",
+      "luma_img_1.png",
+      "luma_img_2.png",
+      "luma_img_3.png",
+      "luma_img_4.png",
+      "luma_img_5.png",
+      "luma_img_6.png",
+      "luma_img_7.png",
+      "luma_img_8.png"
+    ]
   },
   {
     "vl_key": [
